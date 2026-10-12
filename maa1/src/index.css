@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-script: "Alex Brush", cursive;
+
+  --color-forest-deep: #162C20;
+  --color-forest-main: #234B35;
+  --color-forest-olive: #354A2C;
+  --color-sage-soft: #A8B89A;
+  --color-leaf-muted: #718B62;
+  --color-earth-brown: #76634D;
+  --color-cream-soft: #F5F1E7;
+  --color-warm-white: #FFFDF8;
+  --color-gold-sunlight: #E8C170;
+}
+
+/* Base resets & typography smooth rendering */
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #14221A;
+  color: #FFFDF8;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Candle flame animations for celebration */
+@keyframes flame-flicker {
+  0%, 100% {
+    transform: scale(1) translate(0, 0) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 10px rgba(232, 193, 112, 0.9)) drop-shadow(0 0 20px rgba(255, 230, 160, 0.6));
+  }
+  25% {
+    transform: scale(1.08, 0.94) translate(1px, -1px) rotate(1.5deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 14px rgba(232, 193, 112, 1)) drop-shadow(0 0 24px rgba(255, 230, 160, 0.8));
+  }
+  50% {
+    transform: scale(0.96, 1.05) translate(-1px, 0.5px) rotate(-1deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 8px rgba(232, 193, 112, 0.8)) drop-shadow(0 0 16px rgba(255, 230, 160, 0.5));
+  }
+  75% {
+    transform: scale(1.04, 0.97) translate(0.5px, -1.5px) rotate(0.8deg);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 12px rgba(232, 193, 112, 0.95)) drop-shadow(0 0 22px rgba(255, 230, 160, 0.7));
+  }
+}
+
+.animate-candle-flame {
+  animation: flame-flicker 2.4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* Gentle natural sunlight shimmer */
+@keyframes sunlight-drift {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.04);
+  }
+}
+
+.animate-sunlight {
+  animation: sunlight-drift 8s ease-in-out infinite;
+}
+
+/* Gentle floating motion */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 5s ease-in-out infinite;
+}
+
+/* Greenery natural glass card */
+.glass-greenery-card {
+  background: rgba(22, 44, 32, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(168, 184, 154, 0.25);
+  box-shadow: 0 20px 40px -15px rgba(12, 24, 16, 0.8),
+              0 0 20px rgba(168, 184, 154, 0.08) inset;
+}
+
+.glass-greenery-card:hover {
+  border-color: rgba(168, 184, 154, 0.45);
+  box-shadow: 0 25px 50px -12px rgba(12, 24, 16, 0.9),
+              0 0 25px rgba(168, 184, 154, 0.15) inset;
+}
+
+/* Parchment letter card */
+.glass-parchment-card {
+  background: rgba(245, 241, 231, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(118, 99, 77, 0.35);
+  box-shadow: 0 25px 60px rgba(12, 24, 16, 0.7);
+}
+
+/* Custom scrollbar for natural theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(20, 34, 26, 0.7);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 184, 154, 0.35);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 184, 154, 0.7);
+}
+
+/* Smooth fade-in modal & image transition */
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in-scale 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Accessibility: Reduced motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

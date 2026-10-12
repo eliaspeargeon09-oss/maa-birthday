@@ -1,0 +1,11 @@
+{
+  "name": "maa-birthday-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root runner for Maa's Birthday Website",
+  "scripts": {
+    "dev": "npm --prefix maa1 run dev",
+    "build": "npm --prefix maa1 run build",
+    "preview": "npm --prefix maa1 run preview"
+  }
+}

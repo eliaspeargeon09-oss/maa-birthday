@@ -1,0 +1,6 @@
+{
+  "name": "A Cinematic Birthday Experience for Maa",
+  "description": "A cinematic, emotional, interactive storytelling birthday celebration dedicated to Maa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
